@@ -1,4 +1,5 @@
 cd clipboard
+npm ci
 npm run build
 
 cd ..
