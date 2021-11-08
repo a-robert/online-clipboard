@@ -17,7 +17,7 @@ class Clipboard {
   }
 
   start() {
-    const port = process.env.PORT || 3000;
+    const port = process.env.PORT || 8080;
 
     this.app.listen(port, function () {
       console.log(`Server running on ${port}...`);
