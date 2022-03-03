@@ -1,3 +1,5 @@
+import {Button, FormControl, FormHelperText, Input, InputLabel} from '@mui/material';
+
 const {useNavigate, useLocation} = require('react-router-dom');
 const {useAuth} = require('../Auth/AuthProvider');
 
@@ -29,12 +31,13 @@ export default function LoginPage() {
     <div>
       <p>You must log in to view the page at {from}</p>
 
-      <form onSubmit={handleSubmit}>
-        <label>
-          Username: <input name="username" type="text"/>
-        </label>{' '}
-        <button type="submit">Login</button>
-      </form>
+      <FormControl onSubmit={handleSubmit}>
+        <InputLabel htmlFor="username">Username</InputLabel>
+        <Input name="username" id="username" aria-describedby="my-helper-text" />
+        <FormHelperText id="username-helper-text">We'll never share your username.</FormHelperText>
+
+        <Button type="submit">Login</Button>
+      </FormControl>
     </div>
   );
 }
